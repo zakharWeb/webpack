@@ -1,4 +1,14 @@
 @font-face {
-    font-family: 'impact';
-    src: url(../fonts/impact.woff2) format('woff2');
+    font-family: 'Geometria';
+    src: url(../fonts/Geometria-Bold.woff2) format('woff2'),
+        url(../fonts/Geometria-Bold.woff) format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Geometria';
+    src: url(../fonts/Geometria-Medium.woff2) format('woff2'),
+        url(../fonts/Geometria-Medium.woff) format('woff');
+    font-weight: 500;
+    font-style: normal;
 }
