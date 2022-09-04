@@ -1,0 +1,73 @@
+.header {
+    display: grid;
+    // grid-template-rows: max-content;
+    // grid-template-columns: 1fr 1fr 100px;
+    // grid-template-areas: 'logo nav search';
+
+    grid-template: 'logo nav search' max-content / 1fr 1fr 100px;
+    align-items: center;
+    justify-items: start;
+    padding: 20px 0;
+    text-transform: uppercase;
+    overflow: hidden;
+    &__logo-wrapper{
+        grid-area: logo;
+        justify-self: end;
+        margin-right: 160px;
+    }
+    &__nav {
+        grid-area: nav;
+        & ul{
+            display: flex;
+            gap:10px;
+        }
+        & ul a{
+            padding: 10px;
+            transition: color .3s ease;
+            position: relative;
+        }
+        & ul a:hover{
+            color: $oceanColor;
+            &::after{
+                bottom: -63%;
+            }
+        }
+        & ul a:active{
+            color: $oceanColorActive;
+            &::after{
+                background-color: $oceanColorActive;
+            }
+        }
+        & ul a::after{
+            content: '';
+            display: block;
+            width: 100%;
+            height: 80%;
+            position: absolute;
+            left: 10px;
+            bottom: -200%;
+            background-color: $oceanColor;
+            transition: bottom .3s ease, background-color .3s ease;
+        }
+    }
+    &__search {
+        grid-area: search;
+        border: none;
+    }
+    &__search-item{
+        transition: fill .3s ease;
+    }
+    &__search-item:hover{
+        fill: $oceanColor;
+    }
+    &__search-item:active{
+        fill: $oceanColorActive;
+    }
+}
+.logo {
+    color: $redColor;
+    font-size: 22px;
+    font-weight: 700;
+    max-width: 110px;
+    line-height: 1;
+}
